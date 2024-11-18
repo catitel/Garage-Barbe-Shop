@@ -1,0 +1,744 @@
+/* Resetando estilos padrões */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Permanent Marker", cursive;
+    margin-top: 60px;
+    background-color: #000000;
+}
+
+/* Navegação */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 10px 20px;
+    z-index: 10;
+}
+
+.logo-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.logo img {
+    max-height: 100%;
+    height: 3rem;
+}
+
+/* Menu */
+.menu {
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+.menu-wrapper {
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+}
+
+.menu li {
+    margin-left: 20px;
+}
+
+.menu li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.menu li a:hover {
+    color: #e81e1a;
+}
+
+/* Ícone de menu oculto em telas grandes */
+.menu-icon {
+    display: none;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+
+/* Exibir menu para mobile */
+@media (max-width: 768px) {
+    .menu {
+        display: none;
+        flex-direction: column;
+        background-color: #333;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+    }
+
+    .menu li {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    /* Mostrar ícone de menu apenas em telas pequenas */
+    .menu-icon {
+        display: block;
+    }
+
+    /* Exibir menu ao clicar no ícone */
+    .menu.show {
+        display: flex;
+    }
+}
+
+
+
+
+
+
+
+/* Estrutura da seção hero */
+.goiaba {
+    display: flex;
+    position: relative;
+    height: 100vh;
+}
+
+.video-container, .gif-container {
+    width: 50%;
+    height: 100vh;
+    opacity: 0.4;
+}
+
+#background-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+.hero-logo img {
+    width: 100%;
+}
+
+/* Carrossel */
+/* Carrossel */
+.carrossel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 12px;
+    position: relative;
+    width: 100%;
+    overflow: hidden; /* Esconde itens que ultrapassem a área visível */
+}
+
+.carousel-container {
+    overflow: hidden;
+    width: 80%; /* Define a largura visível do carrossel */
+    position: relative;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel-item {
+    flex: 0 0 15%; /* Cada item ocupa 15% da largura */
+    padding: 8px;
+    box-sizing: border-box;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 200px; /* Altura fixa para itens do carrossel */
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.carousel-item:hover img {
+    transform: scale(1.1);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Botões do Carrossel */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 24px;
+    z-index: 5; /* Garante que os botões fiquem sobre o carrossel */
+}
+
+.prev-btn {
+    left: 10px;
+}
+
+.next-btn {
+    right: 10px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+/* Ajustes para telas menores */
+@media (max-width: 768px) {
+    .carousel-container {
+        width: 100%; /* Ocupa a largura total da tela */
+    }
+
+    .carousel-item {
+        flex: 0 0 50%; /* Exibe 2 itens por vez */
+    }
+
+    .carousel-item img {
+        height: 150px; /* Reduz a altura das imagens em telas pequenas */
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel-item {
+        flex: 0 0 50%; /* Exibe 2 itens por vez em telas muito pequenas também */
+    }
+
+    .carousel-item img {
+        height: 120px; /* Altura menor para imagens no mobile */
+    }
+}
+
+
+
+
+/* Seção de Serviços */
+/* Seção de Serviços */
+/* Estilo da Seção de Serviços */
+.servicos {
+    padding: 40px 0;
+    background-color: #5d5b5b36; /* Cor de fundo cinza claro */
+    text-align: center;
+    color: white;
+}
+
+.servicos h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    font-family: 'Permanent Marker', cursive;
+}
+
+.servicos-container {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr; /* 3 colunas com o centro mais largo */
+    grid-template-rows: auto auto;  /* 2 linhas, uma para os serviços e uma para os detalhes */
+    gap: 20px;
+    justify-items: center;
+    position: relative;
+    max-width: 1200px; /* Limita a largura do conteúdo */
+    margin: 0 auto; /* Centraliza o conteúdo */
+}
+
+/* Estilo dos Itens de Serviço */
+.servico-item {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    max-width: 250px;  /* Ajustado para otimizar o uso do espaço */
+    transition: transform 0.3s, box-shadow 0.3s;
+    margin: 0 auto;  /* Garante que as imagens fiquem centralizadas dentro de seus containers */
+}
+/* Ajuste para todas as imagens terem o mesmo tamanho */
+.servico-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    /* Adicionei um tamanho fixo para garantir que todas as imagens fiquem do mesmo tamanho */
+    max-height: 220px; /* Definindo uma altura fixa para todas as imagens */
+}
+
+/* Garantir que todas as imagens tenham a mesma altura */
+.servico-left img,
+.servico-left-bottom img,
+.servico-center img,
+.servico-right img,
+.servico-right-bottom img {
+    height: 220px; /* Definindo uma altura comum */
+    object-fit: cover; /* Faz a imagem se ajustar proporcionalmente */
+}
+
+.servico-item:hover img {
+    transform: scale(1.05);
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.servico-texto {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    opacity: 0;
+    transition: opacity 0.3s;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.servico-item:hover .servico-texto {
+    opacity: 1;
+}
+
+/* Ajuste para centralizar "Cortes" e distribuir os outros serviços */
+.servico-left {
+    grid-column: 1;
+    grid-row: 1; /* Serviços à esquerda, linha superior */
+}
+
+.servico-left-bottom {
+    grid-column: 1;
+    grid-row: 2; /* Serviços à esquerda, linha inferior */
+}
+
+.servico-center {
+    grid-column: 2;
+    grid-row: 1; /* "Cortes" centralizado na linha superior */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.servico-right {
+    grid-column: 3;
+    grid-row: 1; /* Serviços à direita, linha superior */
+}
+
+.servico-right-bottom {
+    grid-column: 3;
+    grid-row: 2; /* Serviços à direita, linha inferior */
+}
+
+/* Detalhes do serviço (exibido ao clicar) */
+.detalhes-servico {
+    display: none; /* Inicialmente escondido */
+    grid-column: 2; /* Centraliza na coluna do meio */
+    grid-row: 2; /* Fica abaixo do serviço "Cortes" */
+    padding: 20px;
+    background-color: #e0e0e0; /* Cor de fundo cinza */
+    border-radius: 10px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+    color: #000; /* Cor da letra preta */
+    text-align: left;
+    max-width: 300px;  /* Limitando a largura da caixa de detalhes */
+    margin: 0 auto;  /* Centralizando horizontalmente */
+}
+
+.detalhes-servico h3 {
+    font-size: 1.8rem;
+    font-family: 'Permanent Marker', cursive;
+    color: #000; /* Cor da letra preta */
+}
+
+.detalhes-servico .descricao {
+    font-size: 1rem;
+    margin-top: 10px;
+    color: #000; /* Cor da letra preta */
+}
+
+.detalhes-servico ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.detalhes-servico li {
+    margin: 5px 0;
+    color: #000; /* Cor da letra preta */
+}
+
+.detalhes-servico .preco {
+    font-weight: bold;
+    color: #f31212;
+}
+
+
+/* Menu */
+.menu {
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+.menu-wrapper {
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+}
+
+.menu li {
+    margin-left: 20px;
+}
+
+.menu li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.menu li a:hover {
+    color: #f31212;
+}
+
+/* Ícone de menu oculto em telas grandes */
+.menu-icon {
+    display: none;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+
+/* Exibir menu para mobile */
+@media (max-width: 768px) {
+    .menu {
+        display: none;
+        flex-direction: column;
+        background-color: #333;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        padding: 20px 0;
+        z-index: 10;
+    }
+
+    .menu li {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    /* Mostrar ícone de menu apenas em telas pequenas */
+    .menu-icon {
+        display: block;
+    }
+
+    /* Exibir menu ao clicar no ícone */
+    .menu.show {
+        display: flex;
+    }
+}
+#detalhesServico {
+    display: none; /* Mantém escondido até ser acionado */
+    background-color: #f0f0f0; /* Cinza claro */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra leve para destaque */
+    margin-top: 20px;
+    max-width: 400px; /* Limita a largura para melhorar a leitura */
+    color: #333; /* Cor do texto para bom contraste */
+}
+
+
+
+
+
+
+
+/*  */
+.localizacao {
+    padding: 40px 20px;
+    background-color: #000; /* Fundo preto */
+    text-align: center; /* Centraliza o texto */
+    color: white; /* Texto em branco */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Alinha os itens no centro */
+    justify-content: center;
+}
+
+.localizacao h2 {
+    font-size: 2.5rem;
+    font-family: 'Permanent Marker', cursive;
+    margin-bottom: 10px;
+    color: white;
+    text-align: center; /* Garante que o título também esteja centralizado */
+}
+
+.localizacao p {
+    font-size: 1rem;
+    color: white;
+    margin-bottom: 20px;
+    text-align: center; /* Centraliza o texto de descrição */
+    max-width: 600px; /* Limita a largura do parágrafo para não se estender demais */
+}
+
+.mapa-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.mapa-container iframe {
+    border-radius: 8px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+    max-width: 100%; /* Responsivo para telas menores */
+    width: 100%;
+    height: 300px; /* Altura fixa em desktops */
+}
+
+/* Ajustes para telas pequenas */
+@media (max-width: 768px) {
+    .localizacao h2 {
+        font-size: 2rem; /* Reduz o tamanho do título */
+    }
+
+    .localizacao p {
+        font-size: 0.9rem; /* Reduz um pouco o texto */
+    }
+
+    .mapa-container iframe {
+        height: 250px; /* Altura reduzida para mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    .localizacao h2 {
+        font-size: 1.8rem; /* Tamanho do título ainda menor em telas muito pequenas */
+    }
+
+    .localizacao p {
+        font-size: 0.8rem; /* Texto ainda menor */
+    }
+
+    .mapa-container iframe {
+        height: 200px; /* Altura menor para telas bem pequenas */
+    }
+}
+
+
+
+
+
+
+/* Estilo para a seção História da Barbearia */
+.historia {
+    padding: 40px 20px;
+    background-color: #f4f4f4; /* Fundo claro */
+    color: #333; /* Cor do texto */
+}
+
+.historia-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap; /* Permite que os itens se ajustem em telas pequenas */
+}
+
+.historia-foto {
+    flex: 1;
+    max-width: 400px;
+    padding-right: 20px;
+}
+
+.foto-lucas {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.historia-texto {
+    flex: 2;
+    padding-left: 20px;
+    max-width: 700px;
+}
+
+.historia h2 {
+    font-size: 2.5rem;
+    font-family: 'Permanent Marker', cursive;
+    margin-bottom: 20px;
+}
+
+.historia p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #555;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .historia-container {
+        flex-direction: column; /* Alinha os itens verticalmente */
+        text-align: center;
+    }
+
+    .historia-foto {
+        padding-right: 0;
+        margin-bottom: 20px; /* Espaço entre a foto e o texto */
+    }
+
+    .historia-texto {
+        padding-left: 0;
+    }
+
+    .foto-lucas {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .historia h2 {
+        font-size: 2rem; /* Tamanho menor no mobile */
+    }
+
+    .historia p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .historia h2 {
+        font-size: 1.8rem; /* Tamanho ainda menor para telas pequenas */
+    }
+
+    .historia p {
+        font-size: 0.9rem;
+    }
+}
+
+
+
+
+/* Estilo para a seção de rodapé */
+.footer {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    flex-wrap: wrap; /* Permite que os itens se ajustem em telas pequenas */
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px; /* Espaçamento entre o texto e os ícones */
+}
+
+.social-icons p {
+    font-size: 1rem;
+    margin-bottom: 10px; /* Espaçamento abaixo do texto */
+    color: #ddd;
+    font-weight: bold;
+}
+
+.social-icon img {
+    width: 30px; /* Tamanho dos ícones */
+    height: 30px;
+    transition: transform 0.3s;
+}
+
+.social-icon:hover img {
+    transform: scale(1.1); /* Efeito de aumento ao passar o mouse */
+}
+
+.footer-text {
+    font-size: 1rem;
+    color: #ddd;
+    margin-top: 10px;
+}
+
+/* Estilo do link do nome */
+.footer-link {
+    color: #f31212; /* Cor dourada para o link */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.footer-link:hover {
+    text-decoration: underline; /* Adiciona sublinhado quando passar o mouse */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column; /* Organiza os ícones e o texto em coluna */
+        align-items: center;
+    }
+
+    .social-icons {
+        margin-bottom: 10px; /* Espaçamento entre os ícones e o texto */
+    }
+}
+
+@media (max-width: 480px) {
+    .social-icon img {
+        width: 25px; /* Ícones menores em telas muito pequenas */
+        height: 25px;
+    }
+
+    .footer-text {
+        font-size: 0.9rem; /* Tamanho menor no mobile */
+    }
+}
+
+
+
+
+
+.whatsapp-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25D366;
+    border-radius: 50%;
+    padding: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000; /* Garante que o botão fique sobre outros elementos */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s;
+}
+
+.whatsapp-button:hover {
+    transform: scale(1.1); /* Efeito de aumento ao passar o mouse */
+}
+
+.whatsapp-icon {
+    width: 30px;
+    height: 30px;
+}

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Garage Barber Shop</title>
+        <link rel="stylesheet" href="./style.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com">
+        <link rel="stylesheet" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet" target="_blank">
+    </head>
+    <body>
+        <!-- Barra de Navegação -->
+        <nav>
+            <div class="menu-icon" onclick="toggleMenu()">☰</div>
+            <div class="logo-container">
+                <a href="#" class="logo"><img src="./img videos/logo branco.PNG" alt="Logo"></a>
+            </div>
+            <div class="menu-wrapper">
+                <ul class="menu">
+                    <li><a href="#" class="menu-link" data-target="servicos">Serviços</a></li>
+                    <li><a href="#" class="menu-link" data-target="historia">História</a></li>
+                    <li><a href="#" class="menu-link" data-target="localizacao">Localização</a></li>
+                    <li><a href="https://www.trinks.com/garage-barber-shop" target="_blank">Marque seu Horário</a></li>
+                </ul>
+            </div>
+        </nav>        
+        
+        <!-- Seção Goiaba -->
+<section class="goiaba">
+    <!-- Vídeo do lado esquerdo -->
+    <div class="video-container">
+        <video autoplay muted loop id="background-video">
+            <source src="./img videos/capa01.mp4" type="video/mp4">
+            Seu navegador não suporta vídeos HTML5.
+        </video>
+    </div>
+    <!-- Vídeo do lado direito -->
+    <div class="gif-container">
+        <video autoplay muted loop id="background-video">
+            <source src="./img videos/capa02.mp4" type="video/mp4">
+            Seu navegador não suporta vídeos HTML5.
+        </video>
+    </div>
+    <!-- Logo centralizada entre os vídeos -->
+    <div class="hero-logo">
+        <img src="./img videos/logo preto prata.PNG" alt="Logo centralizada da Garage Barber Shop" />
+    </div>
+</section>
+
+
+        
+<!-- Carrossel de Imagens -->
+<section class="carrossel">
+    <button class="carousel-btn prev-btn" onclick="moveCarousel(-1)">&#10094;</button> <!-- Botão para voltar -->
+    <div class="carousel-container">
+        <div class="carousel-track">
+            <div class="carousel-item"><img src="./img videos/foto01.jpeg" alt="Imagem 1"></div>
+            <div class="carousel-item"><img src="./img videos/foto02.jpeg" alt="Imagem 2"></div>
+            <div class="carousel-item"><img src="./img videos/foto03.jpeg" alt="Imagem 3"></div>
+            <div class="carousel-item"><img src="./img videos/foto04.jpeg" alt="Imagem 4"></div>
+            <div class="carousel-item"><img src="./img videos/foto05.jpeg" alt="Imagem 5"></div>
+            <div class="carousel-item"><img src="./img videos/foto06.jpeg" alt="Imagem 6"></div>
+            <div class="carousel-item"><img src="./img videos/foto07.jpeg" alt="Imagem 7"></div>
+            <div class="carousel-item"><img src="./img videos/foto08.jpeg" alt="Imagem 8"></div>
+            <div class="carousel-item"><img src="./img videos/foto09.jpeg" alt="Imagem 9"></div>
+            <div class="carousel-item"><img src="./img videos/foto10.jpeg" alt="Imagem 10"></div>
+            <div class="carousel-item"><img src="./img videos/foto11.jpeg" alt="Imagem 11"></div>
+            <div class="carousel-item"><img src="./img videos/foto12.jpeg" alt="Imagem 12"></div>
+            <div class="carousel-item"><img src="./img videos/foto13.jpeg" alt="Imagem 13"></div>
+            <div class="carousel-item"><img src="./img videos/foto14.jpeg" alt="Imagem 14"></div>
+        </div>
+    </div>
+    <button class="carousel-btn next-btn" onclick="moveCarousel(1)">&#10095;</button> <!-- Botão para avançar -->
+</section>
+
+
+
+
+<!-- Seção de Serviços -->
+<section class="servicos">
+    <h2>Serviços</h2>
+    <div class="servicos-container">
+        <!-- Serviços à esquerda -->
+        <div class="servico-item servico-left">
+            <img src="./img videos/como-fazer-barba.jpg" alt="Barba" onclick="mostrarDetalhes('barba')" />
+            <div class="servico-texto">Barba</div>
+        </div>
+        <div class="servico-item servico-left-bottom">
+            <img src="./img videos/sobrancelhas.webp" alt="Sobrancelha" onclick="mostrarDetalhes('sobrancelha')" />
+            <div class="servico-texto">Sobrancelha</div>
+        </div>
+
+        <!-- Serviço centralizado -->
+        <div class="servico-item servico-center">
+            <img src="./img videos/cortando-o-cabelooo.jpg" alt="Cortes" onclick="mostrarDetalhes('cortes')" />
+            <div class="servico-texto">Cortes</div>
+        </div>
+
+        <!-- Serviços à direita -->
+        <div class="servico-item servico-right-bottom">
+            <img src="./img videos/cadeiras-vintage-na-barbearia_155003-10150.jpg" alt="Combos" onclick="mostrarDetalhes('combos')" />
+            <div class="servico-texto">Combos</div>
+        </div>
+        <div class="servico-item servico-right">
+            <img src="./img videos/lavando cabelo.jpg" alt="Procedimentos" onclick="mostrarDetalhes('procedimentos')" />
+            <div class="servico-texto">Procedimentos</div>
+        </div>
+
+        <!-- Área para exibir detalhes do serviço -->
+      
+        <div id="detalhesServico" style="display: none;">
+            <h3 id="tituloServico"></h3>
+            <div id="descricaoServico"></div>
+        </div>
+        
+    </div>
+</section>
+
+
+
+<!-- localização  -->
+
+<section class="localizacao">
+    <h2>Localização</h2>
+    <p>Na rua do Dentran, próximo ao Ki Bomba</p>
+    <div class="mapa-container">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d285.29982872712725!2d-48.08784445353359!3d-15.82915712734695!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935bcd965ec548d7%3A0xad69f5e6d7a3a4b!2sGarage%20Barber%20Shop!5e0!3m2!1spt-BR!2sbr!4v1731605755835!5m2!1spt-BR!2sbr"
+            width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+</section>
+
+
+<!-- HISTORIA  -->
+<section class="historia">
+    <div class="historia-container">
+        <div class="historia-foto">
+            <img src="./img videos/Captura de tela 2024-11-18 105838.png" alt="Foto de Lucas" class="foto-lucas">
+        </div>
+        <div class="historia-texto">
+            <h2>História da Barbearia</h2>
+            <p>A Garage Barber Shop começou em 2020, no auge da pandemia, quando o Lucas, dono da barbearia, decidiu transformar a garagem de sua casa em um espaço dedicado aos cortes de cabelo e ao atendimento personalizado. Com o passar dos anos, a demanda cresceu e o sonho do Lucas se tornou realidade: a garagem deu lugar a uma barbearia muito maior, com uma loja própria, onde hoje atende seus clientes com conforto e profissionalismo. A paixão e dedicação do Lucas fizeram com que a Garage Barber Shop se tornasse um nome reconhecido na cidade.</p>
+        </div>
+    </div>
+</section>
+
+<!-- FINAL -->
+ 
+<section class="footer">
+    <div class="footer-container">
+        <div class="social-icons">
+            <p>Acompanhe nossa barbearia nas redes sociais</p>
+            <a href="https://facebook.com" target="_blank" class="social-icon">
+                <img src="./img videos/icons8-facebook-48.png" alt="Facebook" class="icon">
+            </a>
+            <a href="https://www.instagram.com/garagebarberdf/?igsh=MTRobmFhZzdjbHlp#" target="_blank" class="social-icon">
+                <img src="./img videos/icons8-instagram-48.png" alt="Instagram" class="icon">
+            </a>
+        </div>
+        <div class="footer-text">
+            <p>Feito por <a href="https://github.com/catitel" target="_blank" class="footer-link">Daniel Vitor</a></p>
+        </div>
+    </div>
+</section>
+
+
+
+<a href="https://wa.me/6194059084" class="whatsapp-button" target="_blank" aria-label="Entre em contato pelo WhatsApp">
+    <img src="./img videos/icons8-whatsapp-48.png" alt="WhatsApp" class="whatsapp-icon">
+</a>
+
+
+<script src="./script.js"></script> <!-- Script externo para o carrossel -->
+</html>

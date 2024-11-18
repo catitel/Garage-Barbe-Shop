@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Localização - Garage Barber Shop</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <!-- Barra de Navegação com botão de voltar -->
+    <nav>
+        <div class="logo">
+            <img src="logo.png" alt="Logo da Garage Barber Shop" />
+        </div>
+        <div class="back-button" onclick="voltarPagina()">
+            &#8592; Voltar <!-- Ícone de seta para voltar -->
+        </div>
+        <ul id="menu" class="menu">
+            <li><a href="./menu/servicos.html">Serviços</a></li>
+            <li><a href="./menu/historia.html">História</a></li>
+            <li><a href="./menu/localizacao.html">Localização</a></li>
+        </ul>
+    </nav>
+
+    <section>
+        <h1>Nossa Localização</h1>
+        <p>Encontre-nos no endereço abaixo:</p>
+        
+        <!-- Mapa incorporado do Google Maps -->
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d479.8157069793884!2d-48.08798830757417!3d-15.828946335599358!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935bcd965ec548d7%3A0xad69f5e6d7a3a4b!2sGarage%20Barber%20Shop!5e0!3m2!1spt-BR!2sbr!4v1731507220381!5m2!1spt-BR!2sbr" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
+
+    <script src="../script.js"></script>
+</body>
+</html>
